@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>serviceTrac CRM Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            padding: 10px 10px;
+            background-color: white;
+            z-index: 1000;
+        }
+        .header img {
+            width: 30%;
+        }
+        .navbar{
+            background-color: white;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+        }
+        .navbar img{
+            width: 18%;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .main1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #image1,#image2{
+            width: 100%;
+        }
+        #image1{
+            border-radius: 0px 0px 15px 0px;
+        }
+        #image2{
+            margin-top: 80px;
+            border-radius: 0px 0px 0px 15px;
+        }
+        .para {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .para h1 {
+            color: coral;
+            font-size: x-large;
+        }
+        .para a {
+            font-size: 1.2vw;
+            font-weight: 100;
+            text-decoration: none;
+            padding: 3px 5px;
+            border: 1px solid lightgray;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        .para i {
+            font-size: 1.3vw;
+            font-weight: 100;
+            border: 1px solid coral;
+            border-radius: 25px;
+            background-color: coral;
+            color: white;
+            padding: 8px;
+            transform: rotate(-45deg);
+        }
+        .link {
+            padding-left: 10px;
+            color: black;
+            font-weight: 400;
+        }
+        .para1, .para3 {
+            text-align: center;
+        }
+        .para2{
+            text-align: left;
+            color: black;
+        }
+        
+        .para1 h3{
+            color: coral;
+        }
+        .para3 h1{
+            color: black;
+            
+        }
+        .images table {
+            width: 100%;
+            padding: 2%;
+        }
+        .images img {
+            width: 98%;
+            border-radius: 15px;
+            height: auto;
+        }
+        .para4 {
+            text-align: center;
+            font-size: larger;
+        }
+        .para4 a {
+            text-decoration: underline;
+            color: coral;
+            font-weight: 600;
+        }
+        .footer table {
+            background-color: rgb(251, 247, 247);
+            width: 100%;
+            height: 40%;
+            border: 1px solid coral;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .colour {
+            color: coral;
+            font-size: larger;
+            font-weight: 700;
+        }
+        .footer{
+            width: 95%;
+            margin-left: 2.5%;
+        }
+        .footer tr, td {
+            font-size: larger;
+        }
+        .footer a {
+            text-decoration: none;
+            color: black;
+        }
+        .footer img {
+            width: 8%;
+            height: 7%;
+        }
+        .grid-item{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .flex-container1 {
+            width: 100%;
+            display: flex;
+            border: 1px solid coral;
+            background-color: rgb(238, 238, 235);
+            border-radius: 15px;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            justify-content: space-around;
+            font-size: large;
+            font-weight: 600;
+        }
+        
+        .container1{
+            align-items: center;
+            display: flex;
+            float: left;
+        }
+        .grid-item1{
+            width: 100%;
+            text-align: center;
+        }
+        .grid-item1 img{
+            width: 100%;
+            border-radius: 25px;
+        }
+        #para{
+            width: 150%;
+        }
+        .grid-item1 h3{
+            color: coral;
+        }
+        .grid-item1 p{
+            font-weight: 500;
+        }
+        #image3{
+            width: 100%;
+        }
+        .para2{
+            margin-left: 8.5%;
+        }
+
+        h1 {
+            text-align: left;
+            color: coral;
+            margin-left: 10%;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            padding: 0 10px;
+        }
+        
+        .cell1, .cell2 {
+            background: #ebe5e5;
+            padding-top: 10px;
+            padding-left: 10px;
+            border-radius: 15px;
+        }
+        
+        .naming {
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+        
+        .naming img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .colours {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .font {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+
+        @media (max-width: 600px) {
+            h1 span {
+                font-size: 5vw;
+            }
+        
+            .grid {
+                padding: 0 10px;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        
+            .naming p {
+                font-size: 1.1vw;
+            }
+        }
+        
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        .image {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .image img {
+            width: 95%;
+            margin-left: 2.5%;
+            height: auto;
+        }
+        
+        .image figcaption {
+            width: 16%;
+            position: absolute;
+            padding: 10.5px;
+            border-radius: 25px;
+            bottom: -28px;
+            left: 83.7%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid rgb(129, 124, 124);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image a {
+            font-size: 1vw;
+            text-decoration: none;
+            color: black;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        figcaption i {
+            font-size: 1.3vw;
+            font-weight: 100;
+            border: 1px solid coral;
+            border-radius: 25px;
+            background-color: coral;
+            color: white;
+            padding: 8px;
+            transform: rotate(-45deg);
+            margin-right: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .image figcaption {
+                width: 16%;
+                left: 84%;
+                bottom: -25px;
+                padding: 3px;
+                font-size: 1.5vw;
+            }
+        
+            figcaption i {
+                font-size: 1.5vw;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image figcaption {
+                width: 17%;
+                top: 90%;
+                bottom: -18px;
+                left: 84%;
+                font-size: 3vw;
+            }
+        
+            figcaption i {
+                font-size: 3.5vw;
+            }
+        }
+        @media (max-width: 320px) {
+            .image figcaption {
+                width: 17%;
+                top: 90%;
+                bottom: -18px;
+                left: 84%;
+                font-size: 3vw;
+            }
+        
+            figcaption i {
+                font-size: 3vw;
+            }
+        }
+        .flex-container3 {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        #rtl{
+            display: flex;
+            justify-content: flex-end;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 2em;
+            width: 120px;
+
+            width:400px;
+            height:240px;
+            overflow-x: hidden;
+            text-wrap: nowrap;
+        }
+        #pic2{
+            width:600px;
+            height:240px;
+            overflow: hidden;
+            text-wrap: wrap
+        }
+        #pic3{
+            width:450px;
+            height:240px;
+            overflow: hidden;
+            text-wrap: nowrap;
+        }
+        #rtl1{
+            display: flex;
+            justify-content: flex-end;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 2em;
+            width: 120px;
+
+            width:120px;
+            height:240px;
+            overflow-x: hidden;
+            text-wrap: nowrap;
+        }
+        #pic4{
+            width:600px;
+            height:240px;
+            overflow: hidden;
+            text-wrap: wrap;
+        }
+        #pic5{
+            width:600px;
+            height:240px;
+            overflow: hidden;
+            text-wrap: wrap;
+        }
+        #pic6{
+            width:120px;
+            height:240px;
+            overflow: hidden;
+            text-wrap: nowrap;
+        }
+
+        @media (max-width: 768px){
+            #rtl{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:200px;
+                height:150px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }  
+            #pic2{
+                width:280px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap
+            }
+            #pic3{
+                width:200px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+            #rtl1{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:80px;
+                height:150px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }
+            #pic4{
+                width:250px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic5{
+                width:250px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic6{
+                width:80px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1034px){
+            #rtl{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:200px;
+                height:190px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }  
+            #pic2{
+                width:350px;
+                height:190px;
+                overflow: hidden;
+                text-wrap: wrap
+            }
+            #pic3{
+                width:200px;
+                height:190px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+            #rtl1{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:90px;
+                height:190px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }
+            #pic4{
+                width:280px;
+                height:190px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic5{
+                width:280px;
+                height:190px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic6{
+                width:90px;
+                height:190px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 500px) and (max-width: 768px){
+            #rtl{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:140px;
+                height:150px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }  
+            #pic2{
+                width:200px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap
+            }
+            #pic3{
+                width:140px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+            #rtl1{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:50px;
+                height:150px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }
+            #pic4{
+                width:180px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic5{
+                width:180px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic6{
+                width:50px;
+                height:150px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+        }
+        @media (min-width: 350px) and (max-width: 500px){
+            #rtl{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:70px;
+                height:130px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }  
+            #pic2{
+                width:180px;
+                height:130px;
+                overflow: hidden;
+                text-wrap: wrap
+            }
+            #pic3{
+                width:70px;
+                height:130px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+            #rtl1{
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1vw;
+                width: 60px;
+    
+                width:30px;
+                height:130px;
+                overflow-x: hidden;
+                text-wrap: nowrap;
+            }
+            #pic4{
+                width:130px;
+                height:130px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic5{
+                width:130px;
+                height:130px;
+                overflow: hidden;
+                text-wrap: wrap;
+            }
+            #pic6{
+                width:30px;
+                height:130px;
+                overflow: hidden;
+                text-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <img src="logo1.png" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" style="margin-right: 40px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black">Home</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black">About us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main1">
+        <div class="container1">
+            <div class="grid-item1">
+                <img src="image1.png" id="image1">
+            </div>
+            <div class="grid-item1" id="para" style="margin-top:40px">
+                <h3 style="font-size:2.3vw;">Just ServiceTrac & EzRep for managing<br>one and all of your company.</h3>
+                <p style="font-size:1.1vw;">Our CRM evolves to best cater to your brand, addressing the needs of your<br>employees and the customers at the same time. Our mobile app EzRep supporting<br>the desktop application ServiceTrac making it more accessible and easy to use.</p>
+                <div class="para">
+                    <a href="#"><i class="fa fa-long-arrow-right"></i><span class="link">Request walkthrough</span></a>
+                </div>
+            </div>
+            <div class="grid-item1">
+                <img src="image2.png" id="image2">
+            </div>
+        </div>
+    </section><br><br><br><br>
+        <section>
+            <div class="para1">
+                <h3 style="font-size:2.5vw;">One-size-fits-all doesn't cut it. We build solutions that<br>bend and flex to meet your evolving business needs.</h3>
+                <p style="font-size:1.3vw;">Our agility is your advantage. We're not afraid to break the mold and create strategies that truly fit<br>your goals. Forget rigid packages and outdated methods. With us, you're in the driver's seat.</p>
+            </div>
+            <div id="image3">
+                <figure class="image"><img src="image3.png" alt="" style="border-radius: 10px">
+                    <figcaption style="background-color: white;border: 2px solid rgb(234, 231, 231);"><a href="#"><i class="fa fa-long-arrow-right"></i><span class="link">Checkout features</span></a></figcaption>
+                </figure>
+            </div>
+            <div class="para2">
+                <p style="font-size:1.5vw;">Transform your productivity and exceed expectations with our ServiceTrac &<br>EzRep app that comes equipped with added benefits like expense and activity<br>trackers. Experience the power of efficiency and organization at your fingertips.</p>
+            </div>
+        </section><br><br>
+        <section>
+            <h1><span class="colours1" style="font-size: 3.5vw">What our customers say</span></h1><br>
+            
+            <div class="flex-container3">
+                <div class="cell1" id="rtl">
+                    <p style="font-size:1.5vw;">"My sales team finally has the data and inspired<br>to close deals. Service Track's intuitive motive<br>focused on the right metrics and on tracking<br>targets. It's boosted our team's morale."</p>
+                    <div class="naming">
+                        </div>
+                </div>
+        
+                <div class="cell1" id="pic2" >
+                    <p style="font-size:1.6vw;">"My sales team finally has the data and inspired<br>to close deals. Service Track's intuitive motive<br>focused on the right metrics and on tracking<br>targets. It's boosted our team's morale."</p>
+                    <div class="naming">
+                        <img src="image10.jpg" alt="">
+                        <div>
+                            <p style="font-size:1.3vw;"><span class="colours">Harshit Shah</span><br>
+                            <span class="font">VP Codon soft</span></p>
+                        </div>
+                        </div>
+                </div>
+                <div class="cell1" id="pic3">
+                    <p style="font-size:1.4vw;">"Service Track transformed our customer service from<br>reactive to proactive. We can now anticipate issues,<br>resolve them faster, and keep our clients happier than<br>ever. It's been a game-changer for our business."</p>
+                    <div class="naming">
+                        <img src="image11.jpg" alt="">
+                        <div>
+                            <p style="font-size:1.3vw;"><span class="colours">David Williams</span><br>
+                                <span class="font">CEO, InnovateX</span></p>
+                        </div>
+                        </div>
+                    </div>
+        </div><br>
+
+
+            <div class="flex-container3">
+        <div class="cell1" id="rtl1">
+            <p style="font-size:1.5vw;">"My sales team finally has the data and inspired<br>to close deals. Service Track's intuitive motive<br>focused on the right metrics and on tracking<br>targets. It's boosted our team's morale."</p>
+            <div class="naming">
+                
+                </div>
+        </div>
+
+        <div class="cell1" id="pic4">
+            <p style="font-size:1.2vw;">"Service Track transformed our customer service from<br>reactive to proactive.We can now anticipate issues,<br>resolve them faster, and keep our clients happier than<br>ever.It's been a game-changer for our business."</p>
+            <div class="naming">
+            <img src="image9.jpg" alt="">
+            <div>
+                <p style="font-size:1.3vw;margin-top: 10px"><span class="colours">Jessica Lopez</span><br>
+                <span class="font" style="font-size: 1.1vw">Project Management Manager, GreenWave Enterprises</span></p>
+            </div>
+            </div>
+        </div>
+        <div class="cell1" id="pic5">
+            <p style="font-size:1.4vw;">"My sales team finally has the data and inspired<br>to close deals. Service Track's intuitive motive<br>focused on the right metrics and on tracking<br>targets. It's boosted our team's morale."</p>
+            <div class="naming">
+                <img src="image10.jpg" alt="">
+                <div>
+                    <p style="font-size:1.3vw;"><span class="colours">Harshit Shah</span><br>
+                    <span class="font">VP Codon soft</span></p>
+                </div>
+                </div>
+        </div>
+        <div class="cell1" id="pic6">
+            <p style="font-size:1.5vw;">"Service Track transformed our customer service from<br>reactive to proactive. We can now anticipate issues,<br>resolve them faster, and keep our clients happier than<br>ever. It's been a game-changer for our business."</p>
+            <div class="naming">
+                <img src="image11.jpg" alt="">
+                <div>
+                    <p style="font-size:1.3vw;"><span class="colours">David Williams</span><br>
+                        <span class="font">CEO, InnovateX</span></p>
+                </div>
+                </div>
+            </div>
+        </div><br>
+
+
+
+
+
+            
+        </section><br><br><br><br><br>
+    <main class="container">
+        
+        
+        <section>
+            <div class="para3">
+                <h3 style="font-size:2.5vw;"><b>Unlock new possibilities with integrated solutions.</b></h3>
+            </div><br>
+            <div class="images">
+                <table>
+                    <tr>
+                        <td><img src="image4.png" alt="Image 4"></td>
+                        <td><img src="image5.png" alt="Image 5"></td>
+                        <td><img src="image6.png" alt="Image 6"></td>
+                    </tr>
+                </table>
+            </div><br>
+            <div class="para4">
+                <a href="#">View all products</a>
+            </div><br><br>
+        </section><br><br>
+        
+    </main>
+    <footer class="footer">
+        <div class="flex-container1">
+            <div class="grid-item" style="font-size: 1.4vw;margin-top: 30px">
+                <a href="#">Home</a><br><br>
+                <a href="#">Features</a><br><br>
+                <a href="#">Industries</a><br><br>
+                <a href="#">About us</a><br><br>
+                <a href="#">License Agreement</a><br><br>
+                <a href="#" style="text-decoration: underline">Our Parent Company</a>
+            </div>
+            <div class="grid-item">
+                <b><span class="colour" style="font-size: 2.4vw">Our Presence</span></b><br>
+                <img src="image7.png" alt="India">
+                <p style="font-size:1.6vw">Codon Software Private Limited 161/1,<br>
+                Road No: 13A Jubilee Hills Hyderabad<br>
+                500033 INDIA</p>
+                <img src="image8.png" alt="USA">
+                <p style="font-size: 1.6vw">Codon Software, LLC<br>
+                PO Box 8133, Phoenix 85066 USA<br>
+                Ph: +1(602)300-6883</p>
+            </div> 
+            <div class="grid-item">
+                <b><span class="colour" style="font-size: 2vw;font-weight: 600">Reach out to us@</span></b><br><br>
+                <p  style="font-size: 1.5vw">bigarer170@giratex.com<br>
+                bigarer170@giratex.com</p>
+            </div>               
+        </div>
+    </footer><br><br>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
